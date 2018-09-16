@@ -40,14 +40,32 @@ func m1(x:Int) {
 m1(x: 45627)
 //2.
 //2개의 자연수와 사칙연산(+, -, *, /) 값을 가진 하나의 enum 타입을 입력받아 해당 연산을 수행하는 함수
-//enum Arithmetic {
-//    case addition, subtraction, multiplication, division
-//}
+enum Arithmetic {
+    case addition, subtraction, multiplication, division
+    
+    
+}
 //
+
+func m2(x:Int,y:Int,z:Arithmetic)->Double  {
+    switch z {
+    case .addition:
+        return Double(x) + Double(y)
+    case .subtraction:
+        return Double(x) - Double(y)
+    case .division:
+        return Double(x) / Double(y)
+    case .multiplication:
+        return Double(x) * Double(y)
+    }
+}
+
+print(m2(x: 10, y: 10, z: Arithmetic.addition))
 //3.
 //정수 타입의 배열을 선언하고 해당 배열 요소 중 가장 큰 값을 반환하는 함수 만들기
 //ex) [50, 23, 29, 1, 45, 39, 59, 19, 15] -> 59
 //
+
 func m3() -> Int{
     let arr: [Int] = [50, 23, 29, 1, 45, 39, 59, 19, 15]
     
